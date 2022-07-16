@@ -1,0 +1,63 @@
+@use 'abstracts/variables' as var;
+@mixin first-btn($bg-color, $text-color) {
+    background-color: $bg-color;
+    font-size: 21px;
+    color: $text-color;
+    font-weight: 600;
+    font-family: var.$font-Poppins;
+    border-radius: 7px;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    padding: 25px 33px;
+    border: 3px solid var.$color3;
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(0, 190, 202, .5);
+    }
+    @include media-query(max-width, var.$medium-screen) {
+        font-size: 15px;
+        font-weight: 300;
+        padding: 15px 20px;
+    }
+}
+
+
+/* Media queries */
+
+@mixin media-query($minmax, $screen) {
+    @if $minmax==min-width {
+        @media (min-width: $screen) {
+            @content;
+        }
+    }
+    @else {
+        @media (max-width: $screen) {
+            @content;
+        }
+    }
+}
+
+@mixin veterinarian-h2($text-color, $position) {
+    font-size: 75px;
+    color: $text-color;
+    font-weight: 700;
+    font-family: var.$font-Poppins;
+    text-align: $position;
+}
+
+@mixin veterinarian-p($font-size, $text-color, $position) {
+    font-size: $font-size;
+    color: $text-color;
+    font-weight: 400;
+    font-family: var.$font-Poppins;
+    text-align: $position;
+}
+
+@mixin veterinarian-h4($font-size, $text-color, $position) {
+    font-size: $font-size;
+    color: $text-color;
+    font-weight: 600;
+    font-family: var.$font-Poppins;
+    text-align: $position;
+}

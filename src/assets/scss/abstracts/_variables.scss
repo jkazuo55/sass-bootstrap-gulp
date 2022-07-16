@@ -1,0 +1,26 @@
+    // Fonts
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+    /* colors */
+    
+    $color1: #EAAE00;
+    $color2: #FFC500;
+    $color3: #00BFCA;
+    $color4: #FFFFFF;
+    $color5: #fcc302;
+    $color6: rgb(51 51 51);
+    $color7: rgb(218 172 0);
+    $color8:rgb(49 50 67);
+    $color9: #313243;
+    /* font and typography */
+    
+    $font-Poppins: 'Poppins',
+    sans-serif;
+    /* z index */
+    
+    $global-z-fixed: 99;
+    // breakpoints
+    $small-screen:576px;
+    $medium-screen:768px;
+    $large-screen:992px;
+    $extra-large-screen:1200px;
+    $extra-extra-large-screen:1400px;

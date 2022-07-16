@@ -23,6 +23,34 @@ function compileScssForDev() {
         .pipe(dest('./temp/assets/css/'));
 }
 
+function compileBootstrapForDev() {
+    // 1. where is my scss file
+    return src('node_modules/bootstrap/scss/bootstrap.scss')
+        // 2. pass that file through sass compiler
+        .pipe(sass.sync({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        // 3. where do i save the compiled css
+        .pipe(dest('./temp/assets/libs/'));
+}
+
+function compileFontAwesomeForDev() {
+    // 1. where is my scss file
+    return src('node_modules/@fortawesome/fontawesome-free/css/all.css')
+        // 2. pass that file through sass compiler
+        .pipe(sass.sync({
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
+        // 3. where do i save the compiled css
+        .pipe(dest('./temp/assets/libs/fontawesome/css/'));
+}
+
+function compileFontAwesomeFontForDev() {
+    // 1. where is my scss file
+    return src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
+        .pipe(dest('./temp/assets/libs/fontawesome/webfonts/'));
+}
+
 // transpile ECMA Script Js into js
 function transpileJsForDev() {
     return src('./src/assets/js/*.js')
@@ -45,7 +73,10 @@ function localServer() {
 
 exports.serve = series(
     clean,
-    compileScssForDev,
     transpileJsForDev,
+    compileScssForDev,
+    compileBootstrapForDev,
+    compileFontAwesomeForDev,
+    compileFontAwesomeFontForDev,
     localServer
 );

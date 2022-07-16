@@ -1,0 +1,84 @@
+    @use 'abstracts/variables' as var;
+    /* ==================== start section footer ===================== */
+    
+    .section-footer {
+        background-color: var.$color6;
+        background-position: center;
+        .container {
+            max-width: 1184px;
+            color: var.$color4;
+            font-family: var.$font-Poppins;
+            padding-top: 164px;
+            padding-bottom: 191px;
+        }
+        .col h3,
+        .col-6 h3 {
+            font-size: 38px;
+            font-weight: 600;
+        }
+        .col h3 {
+            padding-bottom: 13px;
+        }
+        .col-6 {
+            text-align: right;
+            max-width: 557px;
+            h3 {
+                line-height: 8px;
+                padding-bottom: 25px;
+            }
+        }
+        .col-6 p {
+            padding-bottom: 50px;
+            font-size: 25px;
+            line-height: 33px;
+            font-weight: 400;
+        }
+        .col ul li a {
+            font-size: 25px;
+            line-height: 44px;
+            font-weight: 400;
+            color: var.$color4;
+        }
+        &__group-input {
+            max-width: 531px;
+            height: 90px;
+            input {
+                background-color: var.$color7;
+                border: none;
+                max-width: 386px;
+                width: 100%;
+            }
+            span {
+                border: none;
+                background-color: var.$color3;
+                max-width: 145px;
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                i {
+                    color: var.$color4;
+                    font-size: 33px;
+                }
+            }
+        }
+        &__icons {
+            padding-top: 34px;
+            ul {
+                display: flex;
+                justify-content: right;
+                column-gap: 17px;
+            }
+            li a {
+                color: var.$color6;
+                i {
+                    width: 44px;
+                    line-height: 44px;
+                    text-align: center;
+                    background-color: var.$color4;
+                    border-radius: 50%;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
