@@ -51,6 +51,12 @@ function compileFontAwesomeFontForDev() {
         .pipe(dest('./temp/assets/libs/fontawesome/webfonts/'));
 }
 
+function copyFontForDev() {
+    // 1. where is my scss file
+    return src('./src/assets/fonts/graphik/*.*')
+        .pipe(dest('./temp/assets/fonts/graphik/'));
+}
+
 // transpile ECMA Script Js into js
 function transpileJsForDev() {
     return src('./src/assets/js/*.js')
@@ -78,5 +84,6 @@ exports.serve = series(
     compileBootstrapForDev,
     compileFontAwesomeForDev,
     compileFontAwesomeFontForDev,
+    copyFontForDev,
     localServer
 );

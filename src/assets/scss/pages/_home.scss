@@ -1,0 +1,41 @@
+@use 'abstracts/variables' as var;
+@use 'abstracts/mixins' as mixin;
+
+/* ==================== start sidemenubar section ===================== */
+
+.home {
+    .container {
+        max-width: 1700px;
+        background-color: orange;
+    }
+}
+
+.title-profile {
+    padding-top: 15px;
+    &__title {
+        span {
+            padding-left: 15px;
+            @include mixin.text-base(22px, var.$color10, bold, var.$font-graphik, normal, 45px, right)
+        }
+    }
+    &__profile {
+        @include mixin.display_flex(row, center, end);
+        div {
+            cursor: pointer;
+            padding-left: 5px;
+            padding-right: 5px;
+            border-radius: 5px;
+            &:hover {
+                background-color: gray;
+            }
+        }
+        picture img {
+            border-radius: 50%;
+        }
+        span {
+            padding-left: 15px;
+            padding-right: 15px;
+            @include mixin.text-base(15px, var.$color9, null, var.$font-graphik, normal, 25px, right);
+        }
+    }
+}

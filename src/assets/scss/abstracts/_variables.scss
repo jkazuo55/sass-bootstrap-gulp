@@ -1,26 +1,21 @@
-    // Fonts
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+    /*fonts*/
+    
+    @font-face {
+        font-family: 'Graphik';
+        src: url('../fonts/graphik/Graphik-Regular.ttf');
+    }
     /* colors */
     
-    $color1: #EAAE00;
-    $color2: #FFC500;
-    $color3: #00BFCA;
-    $color4: #FFFFFF;
-    $color5: #fcc302;
-    $color6: rgb(51 51 51);
-    $color7: rgb(218 172 0);
-    $color8:rgb(49 50 67);
-    $color9: #313243;
+    $color1: #052c71;
+    $color2: #154089;
+    $color3: #FFFFFF;
+    $color4: #97a2d3;
+    $color5: #1b1b31;
+    $color6: #c7d1ec;
+    $color7: #f36b1c;
+    $color8: #0a3889;
+    $color9: #41455a;
+    $color10: #0e163d;
     /* font and typography */
     
-    $font-Poppins: 'Poppins',
-    sans-serif;
-    /* z index */
-    
-    $global-z-fixed: 99;
-    // breakpoints
-    $small-screen:576px;
-    $medium-screen:768px;
-    $large-screen:992px;
-    $extra-large-screen:1200px;
-    $extra-extra-large-screen:1400px;
+    $font-graphik:"Graphik";

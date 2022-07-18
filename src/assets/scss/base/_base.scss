@@ -32,7 +32,7 @@ img {
 }
 
 .container {
-    @include mixin.media-query(min-width, var.$extra-large-screen) {
-        max-width: 1184px;
-    }
+    // @include mixin.media-query(min-width, var.$extra-large-screen) {
+    max-width: 1700px;
+    // }
 }

@@ -1,10 +1,11 @@
 @use 'abstracts/variables' as var;
+@use 'abstracts/breakpoints' as breakpoints;
 @mixin first-btn($bg-color, $text-color) {
     background-color: $bg-color;
     font-size: 21px;
     color: $text-color;
     font-weight: 600;
-    font-family: var.$font-Poppins;
+    font-family: null;
     border-radius: 7px;
     text-align: center;
     display: inline-block;
@@ -15,7 +16,7 @@
         cursor: pointer;
         background-color: rgb(0, 190, 202, .5);
     }
-    @include media-query(max-width, var.$medium-screen) {
+    @include media-query(max-width, breakpoints.$medium) {
         font-size: 15px;
         font-weight: 300;
         padding: 15px 20px;
@@ -25,39 +26,41 @@
 
 /* Media queries */
 
-@mixin media-query($minmax, $screen) {
-    @if $minmax==min-width {
-        @media (min-width: $screen) {
-            @content;
+@mixin media-query($minmax, $breakpoint) {
+    $value: map-get(breakpoints.$breakpointsList, $breakpoint);
+    @if $value !=null and $minmax !=null {
+        @if $minmax==min-width {
+            @media (min-width: $value) {
+                @content;
+            }
+        }
+        @else {
+            @media (max-width: $value) {
+                @content;
+            }
         }
     }
-    @else {
-        @media (max-width: $screen) {
-            @content;
-        }
+}
+
+@mixin display_flex($direction, $items, $content) {
+    display: flex;
+    @if $direction !=null {
+        flex-direction: $direction;
+    }
+    @if $items !=null {
+        align-items: $items;
+    }
+    @if $content !=null {
+        justify-content: $content;
     }
 }
 
-@mixin veterinarian-h2($text-color, $position) {
-    font-size: 75px;
-    color: $text-color;
-    font-weight: 700;
-    font-family: var.$font-Poppins;
-    text-align: $position;
-}
-
-@mixin veterinarian-p($font-size, $text-color, $position) {
+@mixin text-base($font-size, $text-color, $font-weight, $font-family:var.$font-Heebo, $font-style:normal, $line-height, $position:right) {
     font-size: $font-size;
     color: $text-color;
-    font-weight: 400;
-    font-family: var.$font-Poppins;
-    text-align: $position;
-}
-
-@mixin veterinarian-h4($font-size, $text-color, $position) {
-    font-size: $font-size;
-    color: $text-color;
-    font-weight: 600;
-    font-family: var.$font-Poppins;
+    font-weight: $font-weight;
+    font-family: $font-family;
+    font-style: $font-style;
+    line-height: $line-height;
     text-align: $position;
 }

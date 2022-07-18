@@ -1,0 +1,92 @@
+@use 'abstracts/variables' as var;
+@use 'abstracts/mixins' as mixin;
+
+/* ==================== start sidebar section ===================== */
+
+.sidebar {
+    background-color: var.$color1;
+    max-width: 270px;
+    padding-left: 18px;
+    padding-right: 18px;
+    min-height: 100vh;
+    &__logo {
+        @include mixin.display_flex(null, center, center);
+        gap: 12px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    &__item {
+        border-top: 1px solid var.$color2;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        &.showMenu {
+            .sidebar__sub-menu {
+                display: block;
+            }
+        }
+    }
+    &__icon-link {
+        @include mixin.display_flex(null, center, space-between);
+        cursor: pointer;
+        a {
+            @include mixin.display_flex(null, center, center);
+            gap: 13px;
+            i {
+                color: var.$color6;
+            }
+            span {
+                @include mixin.text-base(15px, var.$color4, null, var.$font-graphik, normal, 25px, right);
+            }
+        }
+        i {
+            color: var.$color7;
+        }
+    }
+    &__sub-menu {
+        padding-left: 40px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        display: none;
+        li {
+            padding-top: 15px;
+            padding-bottom: 15px;
+             :hover {
+                background-color: var.$color8
+            }
+        }
+        a {
+            @include mixin.display_flex(null, center, start);
+            gap: 15px;
+            span {
+                @include mixin.text-base(16px, var.$color3, null, var.$font-graphik, normal, 45px, right);
+            }
+        }
+    }
+    &.close {
+        max-width: 80px;
+        .sidebar__logo {
+            justify-content: start;
+            div:last-child {
+                display: none;
+            }
+        }
+        .sidebar__nav {
+            .sidebar__icon-link {
+                a {
+                    margin: 0 auto;
+                    span {
+                        display: none;
+                    }
+                }
+            }
+            i {
+                &.toggle-plus-minus-icon {
+                    display: none;
+                }
+            }
+        }
+        .sidebar__sub-menu {
+            display: none;
+        }
+    }
+}
